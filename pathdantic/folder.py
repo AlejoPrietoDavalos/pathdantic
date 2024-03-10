@@ -10,22 +10,15 @@ __all__ = ["PathFolder"]
 T_PathFolder = TypeVar("T_PathFolder", bound="PathFolder")
 
 class PathFolder(PathBase):
-    name: str = Field(frozen=True)
-    folder: Path = Field(frozen=True)
-
-    @property
-    def p(self) -> Path:
-        return self.folder / self.name
-
     @classmethod
-    def create(cls: Type[T_PathFolder], name: str, folder: Path) -> T_PathFolder:
-        _path_folder = folder / name
-        _path_folder.mkdir(exist_ok=True)
+    def create(cls: Type[T_PathFolder], p: str | Path) -> T_PathFolder:
+        p = Path(p)
+        p.mkdir(exist_ok=True)
 
         fields_default = {}
-        for field, field_type in cls.__annotations__.items():
-            if field != "name" and field != "folder":
-                instance_field: T_PathFolder = field_type.create(name=field, folder=_path_folder)
+        for field, field_type in cls.__annotations__.items():   # TODO: View subclasses fields.
+            if field != "p":
+                instance_field: T_PathFolder = field_type.create(p=p / field)
                 fields_default[field] = instance_field.model_dump()
-        _instance = cls(name=name, folder=folder, **fields_default)
+        _instance = cls(p=p, **fields_default)
         return _instance
