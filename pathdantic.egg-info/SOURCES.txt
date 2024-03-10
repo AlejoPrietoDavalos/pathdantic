@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+pathdantic/__init__.py
+pathdantic/base.py
+pathdantic/folder.py
+pathdantic/root.py
+pathdantic.egg-info/PKG-INFO
+pathdantic.egg-info/SOURCES.txt
+pathdantic.egg-info/dependency_links.txt
+pathdantic.egg-info/requires.txt
+pathdantic.egg-info/top_level.txt
