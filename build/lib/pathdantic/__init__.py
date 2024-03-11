@@ -1,2 +1,2 @@
-from pathdantic.folder import PathFolder
+from pathdantic.folder import PathFolderStatic
 from pathdantic.root import PathRoot

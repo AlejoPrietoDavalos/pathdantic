@@ -3,13 +3,13 @@ from pathlib import Path
 
 from pydantic import Field
 
-from pathdantic.base import PathBase
+from pathdantic.base import BasePath
 
 __all__ = ["PathRoot"]
 
 T_PathRoot = TypeVar("T_PathRoot", bound="PathRoot")
 
-class PathRoot(PathBase):
+class PathRoot(BasePath):
     name: str = Field(frozen=True)
 
     @property
@@ -17,7 +17,7 @@ class PathRoot(PathBase):
         return Path(self.name)
 
     @classmethod
-    def create(cls: Type[T_PathRoot], name: str) -> T_PathRoot:
+    def how_to_instantiate(cls: Type[T_PathRoot], name: str) -> T_PathRoot:
         assert isinstance(name, str), "Debe ser instancia de string."
         _path_root = Path(name)
         _path_root.mkdir(exist_ok=True)
