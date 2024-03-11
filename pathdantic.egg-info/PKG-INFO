@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pathdantic
-Version: 0.0.1
+Version: 0.0.2
 Home-page: https://pypi.org/project/pathdantic
 Author: Alejo Prieto Dávalos
 Author-email: alejoprietodavalos@gmail.com
@@ -8,8 +8,6 @@ Project-URL: Source, https://github.com/AlejoPrietoDavalos/pathdantic/
 Requires-Python: >=3.10,<3.12
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: pydantic==2.6.3
-Requires-Dist: setuptools==65.5.0
 
 # Pathdantic
 - **Pathdantic** is a Python package that enhances the functionality of working with file paths using [Pydantic](https://pydantic-docs.helpmanual.io/) models.

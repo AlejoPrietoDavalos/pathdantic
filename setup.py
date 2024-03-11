@@ -2,7 +2,7 @@ from pathlib import Path
 import setuptools
 
 _NAME = "pathdantic"
-_VERSION = "0.0.1"
+_VERSION = "0.0.2"
 _AUTHOR = "Alejo Prieto Dávalos"
 _README = "README.md"
 _REQUIREMENTS = "requirements.txt"
